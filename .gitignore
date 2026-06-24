@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDE / tooling
+.cursor/
+.idea/
+.vscode/
+*.swp
+*~
+
+# Release zips (canonical copies live on GitHub Releases and releases/ folder)
+*.zip
+
+# Local release candidate archives (mirrors dev repo releases/)
+releases/
