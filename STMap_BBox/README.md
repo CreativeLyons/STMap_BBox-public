@@ -1,4 +1,6 @@
-# STMap_BBox v1.0.0
+# STMap_BBox v1.2.0
+
+Nuke NDK Plugin: An upgraded STMap node that limits the output BBox to the area of the warped content.
 
 ## Supported platforms
 
@@ -7,7 +9,9 @@
 | macOS | arm64 (Apple Silicon) | 14.1, 15.0, 15.1, 15.2, 16.0, 16.1, 17.0 |
 | Linux | x86_64 | 15.0, 15.1, 15.2, 16.0, 16.1, 17.0 |
 
-Windows is not included in this release.
+Windows is not included in this release. Hoping to get some Windows support coming soon.
+
+The `init.py` file inside of the `STMap_BBox` folder will fetch your OS and Nuke Major + Minor version and load the correct compiled Plugin for you.
 
 If your Nuke major.minor version has no matching binary, the plugin prints a warning at startup and does not load.
 
@@ -49,3 +53,5 @@ If your Nuke major.minor version has no matching binary, the plugin prints a war
    ```
 
 4. Restart Nuke. Find the node under **Nodes → Transform → STMap_BBox**, or type `STMap_BBox` in the Tab search.
+
+Full documentation: https://github.com/CreativeLyons/STMap_BBox-public

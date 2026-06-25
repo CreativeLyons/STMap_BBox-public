@@ -5,6 +5,13 @@ All notable changes to STMap_BBox are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-06-25
+
+### Fixed
+
+- The output bounding box no longer crops warped content under strong lens distortion, such as heavy anamorphic plates or large LensDistortion maps.
+- Bounding-box accuracy is now consistent across all supported formats, from HD up to 8K.
+
 ## [1.0.0] - 2026-06-24
 
 ### Added

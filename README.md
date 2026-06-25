@@ -7,11 +7,11 @@ Nuke's native STMap always defaults to the BBox of the STMap's `stmap` input, ob
 
 Options for full control over BBox intersection, adjusting BBox padding, and "smart" BBox limiting to a percentage of the Format size (for those explosive BBox cases).
 
-### How it works under the hood:
+### How it works
 
-The STMap warp is also applied to each of the 4 corner points of the `src` input BBox, along with 16 points distributed along each edge, for better accuracy on bowing in the middle or uneven warps along the edges that might go beyond the corners.
+To find the output box, STMap_BBox warps the `src` bounding box through the same UV map and takes the bounds of the result. It pushes the four corners *and* a series of points sampled along each edge through the warp, so the box captures outward bowing or warps between corners.
 
-Great for LensDistortion maps, iTransform / Distortion / Warping workflows
+Great for LensDistortion maps. Could also be used for iTransform / Distortion / Warping workflows
 
 ![STMap_BBox properties panel](images/STMap_BBox_Properties.jpeg)
 
@@ -35,7 +35,7 @@ If your Nuke major.minor version has no matching binary, the plugin prints a war
 
 ## Install
 
-1. Download and unzip `STMap_BBox_v1.0.0.zip` from [Releases](https://github.com/CreativeLyons/STMap_BBox-public/releases/latest).
+1. Download and unzip `STMap_BBox_v1.2.0.zip` from [Releases](https://github.com/CreativeLyons/STMap_BBox-public/releases/latest).
 
 2. Copy the `STMap_BBox` folder into your Nuke plugin path.  For example:
 
@@ -76,13 +76,12 @@ If your Nuke major.minor version has no matching binary, the plugin prints a war
 
 ## Changelog
 
-### [1.0.0] - 2026-06-24
+### [1.2.0] - 2026-06-25
 
-#### Added
+#### Fixed
 
-- Initial public release: multi-version Mac and Linux binary bundle with smart auto-loader (`init.py`) and Transform menu entry.
-- Bundled binaries for Nuke 14.1–17.0 on Mac and Nuke 15.0–17.0 on Linux (one binary per Nuke major.minor; see README for platform coverage).
-
+- The output bounding box no longer crops warped content under strong lens distortion, such as heavy anamorphic plates or large LensDistortion maps.
+- Bounding-box accuracy is now consistent across all supported formats, from HD up to 8K.
 
 ## Bug reports
 
